@@ -1,41 +1,124 @@
 ---
 import DetailLayout from '../layouts/DetailLayout.astro';
 
-const currentItems = [
+const weekdays = ['星期一', '星期二', '星期三', '星期四', '星期五'];
+
+const schedule = [
   {
-    label: 'SCHOOL',
-    title: '北大数院 · 大三',
-    description: '继续和概率、分析，以及课表上那些看起来很厉害的课程相处。',
+    period: '1–2',
+    courses: [
+      { name: '最优化方法', room: '理教 106', week: '每周', color: 'coral' },
+      null,
+      null,
+      { name: '最优化方法', room: '理教 106', week: '每周', color: 'coral' },
+      null,
+    ],
   },
   {
-    label: 'LEARNING',
-    title: 'Diffusion · RL · 应用随机分析',
-    description: '最近主要在这些方向附近打转。读得不算快，但希望每次都比上次多懂一点。',
+    period: '3–4',
+    courses: [
+      null,
+      { name: '应用随机过程', room: '理教 402', week: '双周', color: 'gray' },
+      { name: '数值代数', room: '二教 101', week: '每周', color: 'mint' },
+      null,
+      { name: '偏微分方程', room: '理教 103', week: '单周', color: 'yellow' },
+    ],
   },
   {
-    label: 'STATUS',
-    title: '缓慢加载中',
-    description: '日常在公式、代码和“我好像懂了”之间反复横跳。',
+    period: '5–6',
+    courses: [
+      { name: '深度学习与强化学习', room: '研本合上', week: '单周', color: 'teal' },
+      null,
+      null,
+      { name: '偏微分方程', room: '理教 103', week: '每周', color: 'yellow' },
+      null,
+    ],
   },
+  {
+    period: '7–8',
+    courses: [
+      { name: '数值代数', room: '二教 101', week: '双周', color: 'mint' },
+      null,
+      { name: '深度学习与强化学习', room: '研本合上', week: '每周', color: 'teal' },
+      { name: '应用随机过程', room: '理教 402', week: '每周', color: 'gray' },
+      null,
+    ],
+  },
+  {
+    period: '10–11',
+    courses: [
+      null,
+      { name: '中国传统官僚政治制度', room: '二教 207', week: '每周', color: 'orange' },
+      null,
+      null,
+      null,
+    ],
+  },
+];
+
+const quests = [
+  '把《The Principles of Diffusion Models》读出一条清楚的主线。',
+  '读完 Score Centering，并留下能让未来的自己看懂的一页笔记。',
+  '把应用随机分析的课堂内容慢慢整理成可复习的版本。',
 ];
 ---
 
 <DetailLayout
   title="Current"
   eyebrow="NOW · 2026.09"
-  description="此刻正在学习、关心和折腾的东西。会随着生活缓慢更新。"
+  description="这学期在哪里出现，以及最近想让哪些事情真正发生。"
 >
-  <section class="current-list" aria-label="Caden 的近况">
-    {currentItems.map((item, index) => (
-      <article class="current-item">
-        <span class="current-index">{String(index + 1).padStart(2, '0')}</span>
-        <div>
-          <p class="current-label">{item.label}</p>
-          <h2>{item.title}</h2>
-          <p>{item.description}</p>
-        </div>
-      </article>
-    ))}
+  <section class="current-section">
+    <div class="current-heading">
+      <div>
+        <p class="detail-label">TIMETABLE</p>
+        <h2>本学期出没时间表</h2>
+      </div>
+      <span>2026 秋</span>
+    </div>
+
+    <div class="schedule-scroll" aria-label="2026 秋季学期课表">
+      <div class="schedule-grid">
+        <div class="schedule-corner">节次</div>
+        {weekdays.map((day) => <div class="schedule-day">{day}</div>)}
+
+        {schedule.map((row) => (
+          <>
+            <div class="schedule-period">{row.period}</div>
+            {row.courses.map((course) => (
+              <div class="schedule-cell">
+                {course && (
+                  <article class={`schedule-course ${course.color}`}>
+                    <h3>{course.name}</h3>
+                    <p>{course.room}</p>
+                    <span>{course.week}</span>
+                  </article>
+                )}
+              </div>
+            ))}
+          </>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="current-section quest-section">
+    <div class="current-heading">
+      <div>
+        <p class="detail-label">NEAR-TERM QUESTS</p>
+        <h2>近期支线任务</h2>
+      </div>
+      <span>努力不鸽</span>
+    </div>
+
+    <ol class="quest-list">
+      {quests.map((quest, index) => (
+        <li>
+          <span>{String(index + 1).padStart(2, '0')}</span>
+          <p>{quest}</p>
+        </li>
+      ))}
+    </ol>
   </section>
 
   <p class="current-updated">最后更新于 2026 年 9 月</p>
