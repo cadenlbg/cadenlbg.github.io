@@ -70,6 +70,7 @@ a { color: inherit; text-decoration: none; }
 .avatar-wrap img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 28%; border-radius: 22px; }
 .hello { margin: 0 0 4px; color: var(--coral); font: 500 12px/1.4 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
 .profile h1 { margin: 0; font: 700 32px/1.3 var(--serif); letter-spacing: -.025em; }
+.profile-alias { display: inline-block; margin-left: 4px; padding: 4px 8px; border-radius: 999px; background: var(--yellow-soft); color: #80601d; font: 500 10px/1 var(--mono); letter-spacing: .02em; transform: rotate(-3deg) translateY(-4px); }
 .profile-intro { margin: 20px 0 0; color: var(--muted); text-align: left; font-size: 15px; line-height: 1.85; }
 .profile-note { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 24px 0 0; color: var(--faint); font-size: 12px; }
 .profile-note span { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
