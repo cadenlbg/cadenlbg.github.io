@@ -1,0 +1,60 @@
+---
+import DetailLayout from '../../layouts/DetailLayout.astro';
+
+const currentCourses = [
+  { title: '最优化方法', href: '/notes/courses/optimization-methods/' },
+  { title: '应用随机过程', href: '/notes/courses/applied-stochastic-processes/' },
+  { title: '数值代数', href: '/notes/courses/numerical-linear-algebra/' },
+  { title: '偏微分方程', href: '/notes/courses/partial-differential-equations/' },
+  { title: '深度学习与强化学习', href: '/notes/courses/deep-learning-and-rl/' },
+  { title: '中国传统官僚政治制度', href: '/notes/courses/chinese-bureaucratic-politics/' },
+];
+
+const pastCourses = [
+  { title: '应用随机分析', term: '2026 春', href: '/notes/applied-stochastic-calculus/' },
+];
+---
+
+<DetailLayout
+  title="课程笔记"
+  eyebrow="NOTES"
+  description="按学期收好。现在的慢慢写，过去的偶尔回来翻。"
+>
+  <section class="notes-term-section">
+    <div class="notes-term-heading">
+      <div>
+        <p class="detail-label">CURRENT TERM</p>
+        <h2>本学期笔记</h2>
+      </div>
+      <span>大三上 · 2026 秋</span>
+    </div>
+    <div class="notes-index-grid">
+      {currentCourses.map((course, index) => (
+        <a href={course.href}>
+          <span>{String(index + 1).padStart(2, '0')}</span>
+          <h3>{course.title}</h3>
+          <i>Notes →</i>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="notes-term-section">
+    <div class="notes-term-heading">
+      <div>
+        <p class="detail-label">ARCHIVE</p>
+        <h2>往期笔记</h2>
+      </div>
+      <span>偶尔复习</span>
+    </div>
+    <div class="notes-index-grid">
+      {pastCourses.map((course, index) => (
+        <a href={course.href}>
+          <span>{String(index + 1).padStart(2, '0')}</span>
+          <h3>{course.title}</h3>
+          <i>{course.term} →</i>
+        </a>
+      ))}
+    </div>
+  </section>
+</DetailLayout>
