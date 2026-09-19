@@ -1,0 +1,42 @@
+---
+import DetailLayout from '../layouts/DetailLayout.astro';
+
+const currentItems = [
+  {
+    label: 'SCHOOL',
+    title: '北大数院 · 大三',
+    description: '继续和概率、分析，以及课表上那些看起来很厉害的课程相处。',
+  },
+  {
+    label: 'LEARNING',
+    title: 'Diffusion · RL · 应用随机分析',
+    description: '最近主要在这些方向附近打转。读得不算快，但希望每次都比上次多懂一点。',
+  },
+  {
+    label: 'STATUS',
+    title: '缓慢加载中',
+    description: '日常在公式、代码和“我好像懂了”之间反复横跳。',
+  },
+];
+---
+
+<DetailLayout
+  title="Current"
+  eyebrow="NOW · 2026.09"
+  description="此刻正在学习、关心和折腾的东西。会随着生活缓慢更新。"
+>
+  <section class="current-list" aria-label="Caden 的近况">
+    {currentItems.map((item, index) => (
+      <article class="current-item">
+        <span class="current-index">{String(index + 1).padStart(2, '0')}</span>
+        <div>
+          <p class="current-label">{item.label}</p>
+          <h2>{item.title}</h2>
+          <p>{item.description}</p>
+        </div>
+      </article>
+    ))}
+  </section>
+
+  <p class="current-updated">最后更新于 2026 年 9 月</p>
+</DetailLayout>
