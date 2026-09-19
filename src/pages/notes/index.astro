@@ -16,16 +16,21 @@ const pastCourses = [
 ---
 
 <DetailLayout
-  title="课程笔记"
+  title="一些笔记"
   eyebrow="NOTES"
-  description="按学期收好。现在的慢慢写，过去的偶尔回来翻。"
+  description="课程里的认真推导，以及生活和阅读留下的一点页边痕迹。"
 >
   <section class="notes-term-section">
     <div class="notes-term-heading">
       <div>
-        <p class="detail-label">CURRENT TERM</p>
-        <h2>本学期笔记</h2>
+        <p class="detail-label">COURSE NOTES</p>
+        <h2>课程笔记</h2>
       </div>
+      <span>按学期整理</span>
+    </div>
+
+    <div class="notes-subterm">
+      <h3>本学期笔记</h3>
       <span>大三上 · 2026 秋</span>
     </div>
     <div class="notes-index-grid">
@@ -37,14 +42,9 @@ const pastCourses = [
         </a>
       ))}
     </div>
-  </section>
 
-  <section class="notes-term-section">
-    <div class="notes-term-heading">
-      <div>
-        <p class="detail-label">ARCHIVE</p>
-        <h2>往期笔记</h2>
-      </div>
+    <div class="notes-subterm past-notes-subterm">
+      <h3>往期笔记</h3>
       <span>偶尔复习</span>
     </div>
     <div class="notes-index-grid">
@@ -55,6 +55,20 @@ const pastCourses = [
           <i>{course.term} →</i>
         </a>
       ))}
+    </div>
+  </section>
+
+  <section class="notes-term-section">
+    <div class="notes-term-heading">
+      <div>
+        <p class="detail-label">MARGINALIA</p>
+        <h2>页边小记</h2>
+      </div>
+      <span>生活 · 阅读 · 偶得</span>
+    </div>
+    <div class="notes-empty-state">
+      <p>第一页暂时还是空的。</p>
+      <span>等某个值得留下的念头经过这里。</span>
     </div>
   </section>
 </DetailLayout>
