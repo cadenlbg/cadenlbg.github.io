@@ -1,0 +1,52 @@
+---
+import DetailLayout from '../../layouts/DetailLayout.astro';
+---
+
+<DetailLayout
+  title="Diffusion"
+  eyebrow="NOW STUDYING · 01"
+  description="从三个互补视角理解扩散模型：变分去噪、score-based 建模与连续流。"
+>
+  <section class="resource-feature coral-feature">
+    <div class="resource-index">BOOK 01</div>
+    <div>
+      <p class="resource-type">主读材料</p>
+      <h2>The Principles of Diffusion Models</h2>
+      <p class="resource-authors">Chieh-Hsin Lai, Yang Song, Dongjun Kim, Yuki Mitsufuji, Stefano Ermon</p>
+      <p>一本强调“共同数学骨架”的扩散模型教材。它从深度生成建模出发，把 DDPM、NCSN、Score SDE、Flow Matching 放进同一条概率传输主线中。</p>
+      <div class="resource-actions">
+        <a href="https://arxiv.org/abs/2510.21890" target="_blank" rel="noreferrer">arXiv 页面 ↗</a>
+        <a href="https://the-principles-of-diffusion-models.github.io/" target="_blank" rel="noreferrer">配套网站 ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail-section">
+    <p class="detail-label">READING MAP</p>
+    <h2>阅读路线</h2>
+    <ol class="reading-map">
+      <li>
+        <span>01</span>
+        <div><h3>先建立三种视角</h3><p>从 VAE 到 DDPM、从 EBM 到 score matching，再从 normalizing flow 到 flow matching。</p></div>
+      </li>
+      <li>
+        <span>02</span>
+        <div><h3>再理解连续时间统一框架</h3><p>重点看 Score SDE、probability flow ODE、Fokker–Planck 方程，以及不同训练目标之间的等价关系。</p></div>
+      </li>
+      <li>
+        <span>03</span>
+        <div><h3>最后看生成效率</h3><p>包括 guidance、DDIM / DPM-Solver、蒸馏、consistency model 与 mean flow。</p></div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="detail-section compact-section">
+    <p class="detail-label">QUESTIONS</p>
+    <h2>带着这些问题读</h2>
+    <ul class="question-list">
+      <li>变分、score 与 flow 三种表述，究竟共享了什么？</li>
+      <li>随机的 reverse-time SDE 与确定性的 probability flow ODE 为什么能对应同一组边缘分布？</li>
+      <li>减少采样步数时，我们牺牲的到底是什么？</li>
+    </ul>
+  </section>
+</DetailLayout>

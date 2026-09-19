@@ -1,0 +1,44 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  eyebrow: string;
+  description: string;
+}
+
+const { title, eyebrow, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f7f6f1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} · Caden</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="nav-shell" aria-label="详情页导航">
+        <a class="brand" href="/">Caden<span>.</span></a>
+        <a class="back-link" href="/">← 返回主页</a>
+      </nav>
+    </header>
+
+    <main class="detail-shell">
+      <header class="detail-hero">
+        <p class="section-kicker">{eyebrow}</p>
+        <h1>{title}</h1>
+        <p>{description}</p>
+      </header>
+      <div class="detail-content">
+        <slot />
+      </div>
+    </main>
+
+    <footer class="detail-footer">© {new Date().getFullYear()} Caden · 写得慢一点，想清楚一点。</footer>
+  </body>
+</html>

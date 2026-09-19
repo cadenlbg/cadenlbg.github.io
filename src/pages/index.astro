@@ -1,0 +1,180 @@
+---
+import '../styles/global.css';
+
+const learning = [
+  {
+    eyebrow: 'BOOK · READING',
+    title: 'Diffusion',
+    chinese: '扩散模型',
+    description: '沿着变分、score-based 与 flow-based 三条路径，理解从噪声到数据的生成过程。',
+    href: '/learning/diffusion/',
+    color: 'coral',
+    mark: 'D',
+  },
+  {
+    eyebrow: 'PAPER · READING',
+    title: 'Reinforcement Learning',
+    chinese: '强化学习',
+    description: '从一篇关于 score centering 的新论文开始，关注训练稳定性与 off-policy 学习。',
+    href: '/learning/rl/',
+    color: 'green',
+    mark: 'R',
+  },
+];
+
+const papers = [
+  {
+    label: 'CoT',
+    title: 'Chain-of-Thought Prompting Elicits Reasoning in Large Language Models',
+    meta: 'Jason Wei et al. · 2022',
+    href: 'https://arxiv.org/abs/2201.11903',
+  },
+  {
+    label: 'RoPE',
+    title: 'RoFormer: Enhanced Transformer with Rotary Position Embedding',
+    meta: 'Jianlin Su et al. · 2021',
+    href: 'https://arxiv.org/abs/2104.09864',
+  },
+];
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Caden 的个人主页：正在读的东西、课程笔记，以及随机遇见的好文章。" />
+    <meta name="theme-color" content="#f7f6f1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Caden · Learning & Notes</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="nav-shell" aria-label="主导航">
+        <a class="brand" href="#top" aria-current="page">Caden<span>.</span></a>
+        <div class="nav-links">
+          <a href="#learning">最近在啃</a>
+          <a href="#notes">笔记</a>
+          <a href="#wander">随机游走</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top" class="page-shell">
+      <aside class="profile">
+        <div class="profile-inner">
+          <div class="avatar-wrap">
+            <img src="/avatar.jpg" alt="Caden 的头像" width="180" height="180" />
+          </div>
+          <div class="profile-copy">
+            <p class="hello">你好，我是</p>
+            <h1>Caden</h1>
+            <p class="profile-intro">这里放正在读的东西、课程笔记，以及偶尔撞见的好文章。</p>
+          </div>
+          <p class="profile-note"><span></span> 写得慢一点，想清楚一点。</p>
+        </div>
+      </aside>
+
+      <div class="content">
+        <section id="learning" class="section-block">
+          <header class="section-header">
+            <div>
+              <p class="section-kicker">NOW STUDYING</p>
+              <h2>最近在啃</h2>
+            </div>
+            <span class="section-count">02</span>
+          </header>
+
+          <div class="learning-grid">
+            {learning.map((item) => (
+              <a class="topic-card" href={item.href}>
+                <div class={`topic-mark ${item.color}`}>{item.mark}</div>
+                <div>
+                  <p class="card-eyebrow">{item.eyebrow}</p>
+                  <h3>{item.title}</h3>
+                  <p class="topic-chinese">{item.chinese}</p>
+                  <p class="card-description">{item.description}</p>
+                </div>
+                <span class="card-arrow" aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section id="notes" class="section-block">
+          <header class="section-header">
+            <div>
+              <p class="section-kicker">NOTES</p>
+              <h2>一些笔记</h2>
+            </div>
+            <span class="section-count">02 类</span>
+          </header>
+
+          <div class="note-categories">
+            <div class="note-category">
+              <p class="category-name"><span class="category-dot coral"></span>课程笔记</p>
+              <a class="note-row" href="/notes/applied-stochastic-calculus/">
+                <div>
+                  <h3>应用随机分析</h3>
+                  <p>2026 春 · 条件期望、鞅、布朗运动、Itô 公式与随机微分方程</p>
+                </div>
+                <span>进入 →</span>
+              </a>
+            </div>
+
+            <div class="note-category">
+              <p class="category-name"><span class="category-dot green"></span>其他笔记</p>
+              <div class="empty-note">
+                <p>先留一页空白。</p>
+                <span>等有值得写下的东西再来。</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="wander" class="section-block wander-section">
+          <header class="section-header">
+            <div>
+              <p class="section-kicker">RANDOM WALK</p>
+              <h2>随机游走</h2>
+            </div>
+            <span class="section-count">随手收藏</span>
+          </header>
+
+          <div class="wander-grid">
+            <div class="wander-column">
+              <p class="category-name"><span class="category-dot yellow"></span>Paper</p>
+              {papers.map((paper) => (
+                <a class="wander-item" href={paper.href} target="_blank" rel="noreferrer">
+                  <span class="wander-label">{paper.label}</span>
+                  <div>
+                    <h3>{paper.title}</h3>
+                    <p>{paper.meta}</p>
+                  </div>
+                  <span class="external-arrow">↗</span>
+                </a>
+              ))}
+            </div>
+
+            <div class="wander-column">
+              <p class="category-name"><span class="category-dot green"></span>Blog</p>
+              <a class="wander-item" href="https://spaces.ac.cn/author/1/5/" target="_blank" rel="noreferrer">
+                <span class="wander-label blog-label">Blog</span>
+                <div>
+                  <h3>苏剑林老师的科学空间</h3>
+                  <p>数学、机器学习与自然语言处理</p>
+                </div>
+                <span class="external-arrow">↗</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>© {new Date().getFullYear()} Caden</p>
+      <p>Keep wandering.</p>
+    </footer>
+  </body>
+</html>
