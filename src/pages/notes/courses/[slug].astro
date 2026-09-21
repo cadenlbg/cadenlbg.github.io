@@ -26,8 +26,19 @@ const { course } = Astro.props;
     <div>
       <p class="resource-type">课程笔记</p>
       <h2>{course.title}</h2>
-      <p>暂时还是一页空白，等第一条值得留下的笔记。</p>
+      <p>{course.slug === 'optimization-methods' ? 'Lecture 3 已上传，后续会继续补充。' : '暂时还是一页空白，等第一条值得留下的笔记。'}</p>
     </div>
     <span class="course-status"><i></i> 整理中</span>
   </section>
+
+  {course.slug === 'optimization-methods' && (
+    <section class="detail-section course-materials">
+      <p class="detail-label">LECTURE NOTES</p>
+      <h2>Lecture 3</h2>
+      <a class="resource-file" href="/notes/courses/optimization-methods/lec3-20260921.pdf" target="_blank" rel="noreferrer">
+        <span>最优化方法 · Lecture 3</span>
+        <small>打开 PDF ↗</small>
+      </a>
+    </section>
+  )}
 </DetailLayout>
