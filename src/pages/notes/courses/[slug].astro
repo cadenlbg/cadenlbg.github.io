@@ -34,9 +34,12 @@ const { course } = Astro.props;
   {course.slug === 'optimization-methods' && (
     <section class="detail-section course-materials">
       <p class="detail-label">LECTURE NOTES</p>
-      <h2>Lecture 3</h2>
+      <h2>Lecture 3 · 2026-09-24</h2>
       <a class="resource-file" href="/notes/courses/optimization-methods/lec3-20260921.pdf" target="_blank" rel="noreferrer">
-        <span>最优化方法 · Lecture 3</span>
+        <div class="resource-file-copy">
+          <span>最优化方法 · Lecture 3</span>
+          <p>凸优化基本概念与最优性条件</p>
+        </div>
         <small>打开 PDF ↗</small>
       </a>
     </section>
@@ -45,9 +48,26 @@ const { course } = Astro.props;
   {course.slug === 'numerical-linear-algebra' && (
     <section class="detail-section course-materials">
       <p class="detail-label">LECTURE NOTES</p>
-      <h2>Chapter 1</h2>
+      <h2>Chapter 1 · 2026-09-23</h2>
       <a class="resource-file" href="/notes/courses/numerical-linear-algebra/chapter1-20260923.pdf" target="_blank" rel="noreferrer">
-        <span>数值代数 · Chapter 1</span>
+        <div class="resource-file-copy">
+          <span>数值代数 · Chapter 1</span>
+          <p>三角方程组与线性方程组的基本解法</p>
+        </div>
+        <small>打开 PDF ↗</small>
+      </a>
+    </section>
+  )}
+
+  {course.slug === 'partial-differential-equations' && (
+    <section class="detail-section course-materials">
+      <p class="detail-label">LECTURE NOTES</p>
+      <h2>Lecture 2 · 2026-09-24</h2>
+      <a class="resource-file" href="/notes/courses/partial-differential-equations/lec2-20260924.pdf" target="_blank" rel="noreferrer">
+        <div class="resource-file-copy">
+          <span>偏微分方程 · Lecture 2</span>
+          <p>Transportation Eq and Harmonic Eq</p>
+        </div>
         <small>打开 PDF ↗</small>
       </a>
     </section>
