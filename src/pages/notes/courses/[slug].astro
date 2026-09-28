@@ -26,7 +26,7 @@ const { course } = Astro.props;
     <div>
       <p class="resource-type">课程笔记</p>
       <h2>{course.title}</h2>
-      <p>{course.slug === 'optimization-methods' ? 'Lecture 3、Lecture 4 已上传，后续会继续补充。' : course.slug === 'numerical-linear-algebra' ? 'Chapter 1 已上传，后续会继续补充。' : '暂时还是一页空白，等第一条值得留下的笔记。'}</p>
+      <p>{course.slug === 'optimization-methods' ? 'Lecture 3、Lecture 4 已上传，后续会继续补充。' : course.slug === 'numerical-linear-algebra' ? 'Chapter 1、Lecture 2 已上传，后续会继续补充。' : '暂时还是一页空白，等第一条值得留下的笔记。'}</p>
     </div>
     <span class="course-status"><i></i> 整理中</span>
   </section>
@@ -61,6 +61,14 @@ const { course } = Astro.props;
         <div class="resource-file-copy">
           <span>数值代数 · Chapter 1</span>
           <p>三角方程组与线性方程组的基本解法</p>
+        </div>
+        <small>打开 PDF ↗</small>
+      </a>
+      <h2 class="course-material-title">Lecture 2 · 2026-09-28</h2>
+      <a class="resource-file" href="/notes/courses/numerical-linear-algebra/lec2-20260928.pdf" target="_blank" rel="noreferrer">
+        <div class="resource-file-copy">
+          <span>数值代数 · Lecture 2</span>
+          <p>向量与矩阵范数、线性方程组敏感性与误差分析</p>
         </div>
         <small>打开 PDF ↗</small>
       </a>
