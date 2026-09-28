@@ -26,7 +26,7 @@ const { course } = Astro.props;
     <div>
       <p class="resource-type">课程笔记</p>
       <h2>{course.title}</h2>
-      <p>{course.slug === 'optimization-methods' ? 'Lecture 3、Lecture 4 已上传，后续会继续补充。' : course.slug === 'numerical-linear-algebra' ? 'Chapter 1、Lecture 2 已上传，后续会继续补充。' : '暂时还是一页空白，等第一条值得留下的笔记。'}</p>
+      <p>{course.slug === 'optimization-methods' ? 'Lecture 3、Lecture 4 已上传，后续会继续补充。' : course.slug === 'numerical-linear-algebra' ? 'Lecture 1、Lecture 2 已上传，后续会继续补充。' : '暂时还是一页空白，等第一条值得留下的笔记。'}</p>
     </div>
     <span class="course-status"><i></i> 整理中</span>
   </section>
@@ -56,10 +56,10 @@ const { course } = Astro.props;
   {course.slug === 'numerical-linear-algebra' && (
     <section class="detail-section course-materials">
       <p class="detail-label">LECTURE NOTES</p>
-      <h2>Chapter 1 · 2026-09-23</h2>
-      <a class="resource-file" href="/notes/courses/numerical-linear-algebra/chapter1-20260923.pdf" target="_blank" rel="noreferrer">
+      <h2>Lecture 1 · 2026-09-23</h2>
+      <a class="resource-file" href="/notes/courses/numerical-linear-algebra/lec1-20260923.pdf" target="_blank" rel="noreferrer">
         <div class="resource-file-copy">
-          <span>数值代数 · Chapter 1</span>
+          <span>数值代数 · Lecture 1</span>
           <p>三角方程组与线性方程组的基本解法</p>
         </div>
         <small>打开 PDF ↗</small>
