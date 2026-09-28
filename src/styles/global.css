@@ -163,6 +163,7 @@ a { color: inherit; text-decoration: none; }
 .resource-actions a:hover { border-color: var(--coral); color: var(--coral); }
 .detail-section { margin-top: 70px; }
 .detail-section > h2 { margin: 0 0 25px; font: 700 26px/1.4 var(--serif); }
+.course-material-title { margin-top: 34px !important; }
 .reading-map { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
 .reading-map li, .chapter-list article { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 20px; padding: 24px 0; border-bottom: 1px solid var(--line); }
 .reading-map li > span, .chapter-list article > span { color: var(--coral); font: 500 12px/1.8 var(--mono); }
