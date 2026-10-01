@@ -1,5 +1,13 @@
 ---
 import DetailLayout from '../../layouts/DetailLayout.astro';
+
+const reading = [
+  { label: 'RLHF', title: 'Reinforcement Learning from Human Feedback', meta: 'Nathan Lambert · 综述与教材', href: '/learning/rl/rlhf-nathan-lambert.pdf' },
+  { label: 'PPO', title: 'Proximal Policy Optimization Algorithms', meta: 'John Schulman et al. · 2017', href: '/learning/rl/ppo-schulman-2017.pdf' },
+  { label: 'InstructGPT', title: 'Training language models to follow instructions with human feedback', meta: 'Long Ouyang et al. · 2022', href: '/learning/rl/instructgpt-ouyang-2022.pdf' },
+  { label: 'DPO', title: 'Direct Preference Optimization', meta: 'Rafael Rafailov et al. · 2024', href: '/learning/rl/dpo-rafailov-2024.pdf' },
+  { label: 'GRPO', title: 'DeepSeekMath', meta: 'Zhihong Shao et al. · 2024 · 提出 GRPO', href: '/learning/rl/grpo-deepseekmath-2024.pdf' },
+];
 ---
 
 <DetailLayout
@@ -7,19 +15,29 @@ import DetailLayout from '../../layouts/DetailLayout.astro';
   eyebrow="NOW STUDYING · 02"
   description="从人类反馈到策略优化，慢慢理清语言模型的强化学习与后训练。"
 >
-  <section class="resource-feature green-feature">
-    <div class="resource-index">BOOK 01</div>
-    <div>
-      <p class="resource-type">正在读</p>
-      <h2>Reinforcement Learning from Human Feedback</h2>
-      <p class="resource-authors">Nathan Lambert · 2026</p>
-      <p>一本围绕语言模型后训练的 RLHF 入门书，从指令微调、奖励模型讲到策略优化与评估。</p>
-      <div class="resource-actions">
-        <a href="https://arxiv.org/abs/2504.12501" target="_blank" rel="noreferrer">arXiv 页面 ↗</a>
-        <a href="/learning/rl/rlhf-nathan-lambert.pdf" target="_blank" rel="noreferrer">PDF ↗</a>
-      </div>
+  <details class="reading-folder">
+    <summary>
+      <span class="folder-index">01 / 05</span>
+      <span class="folder-copy">
+        <span class="resource-type">READING FOLDER</span>
+        <strong>RLHF 与后训练</strong>
+        <small>综述、PPO、InstructGPT、DPO、GRPO</small>
+      </span>
+      <span class="folder-chevron" aria-hidden="true">⌄</span>
+    </summary>
+    <div class="folder-items">
+      {reading.map((item) => (
+        <a class="folder-item" href={item.href} target="_blank" rel="noreferrer">
+          <span class="folder-label">{item.label}</span>
+          <span class="folder-item-copy">
+            <strong>{item.title}</strong>
+            <small>{item.meta}</small>
+          </span>
+          <span class="folder-external" aria-hidden="true">↗</span>
+        </a>
+      ))}
     </div>
-  </section>
+  </details>
 
   <section class="resource-feature green-feature detail-section">
     <div class="resource-index">PAPER 01</div>

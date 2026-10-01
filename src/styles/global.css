@@ -161,6 +161,24 @@ a { color: inherit; text-decoration: none; }
 .resource-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
 .resource-actions a { padding: 7px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--text); font-size: 12px; transition: border-color .2s ease, color .2s ease; }
 .resource-actions a:hover { border-color: var(--coral); color: var(--coral); }
+.reading-folder { overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: var(--paper); }
+.reading-folder summary { display: flex; align-items: center; gap: 24px; padding: 28px 30px; cursor: pointer; list-style: none; }
+.reading-folder summary::-webkit-details-marker { display: none; }
+.folder-index { color: var(--green); font: 500 11px/1.5 var(--mono); white-space: nowrap; }
+.folder-copy { flex: 1; min-width: 0; }
+.folder-copy .resource-type { display: block; color: var(--green); }
+.folder-copy strong { display: block; font: 600 25px/1.45 var(--serif); }
+.folder-copy small { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; }
+.folder-chevron { color: var(--green); font: 600 24px/1 var(--serif); transition: transform .2s ease; }
+.reading-folder[open] .folder-chevron { transform: rotate(180deg); }
+.folder-items { padding: 0 30px 8px; border-top: 1px solid var(--line); }
+.folder-item { display: grid; grid-template-columns: 80px minmax(0, 1fr) 18px; gap: 16px; align-items: start; padding: 18px 0; border-bottom: 1px solid var(--line); color: var(--text); }
+.folder-item:last-child { border-bottom: 0; }
+.folder-label { color: var(--green); font: 500 11px/1.6 var(--mono); }
+.folder-item-copy strong { display: block; font: 600 16px/1.5 var(--serif); }
+.folder-item-copy small { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.folder-external { color: var(--green); }
+.folder-item:hover .folder-item-copy strong { color: var(--green); }
 .detail-section { margin-top: 70px; }
 .detail-section > h2 { margin: 0 0 25px; font: 700 26px/1.4 var(--serif); }
 .course-material-title { margin-top: 34px !important; }
@@ -269,6 +287,9 @@ blockquote { margin: 0; font: 600 17px/1.9 var(--serif); }
   .notes-index-grid { grid-template-columns: 1fr; }
   .concept-grid { grid-template-columns: 1fr; }
   .resource-feature { grid-template-columns: 1fr; gap: 12px; padding: 24px; }
+  .reading-folder summary { gap: 14px; padding: 22px; }
+  .folder-items { padding: 0 22px 6px; }
+  .folder-item { grid-template-columns: 68px minmax(0, 1fr) 16px; gap: 10px; }
   .resource-index { margin-bottom: 8px; }
   .course-overview { flex-direction: column; }
   .detail-shell { padding: 58px 0 76px; }
