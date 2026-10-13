@@ -26,7 +26,7 @@ const { course } = Astro.props;
     <div>
       <p class="resource-type">课程笔记</p>
       <h2>{course.title}</h2>
-      <p>{course.slug === 'optimization-methods' ? 'Lecture 3、Lecture 4 已上传，后续会继续补充。' : course.slug === 'numerical-linear-algebra' ? 'Lecture 1、Lecture 2 已上传，后续会继续补充。' : '暂时还是一页空白，等第一条值得留下的笔记。'}</p>
+      <p>{course.slug === 'optimization-methods' ? 'Lecture 3、Lecture 4 已上传，后续会继续补充。' : course.slug === 'numerical-linear-algebra' ? 'Lecture 1、Lecture 2 已上传，后续会继续补充。' : course.slug === 'partial-differential-equations' ? 'Lecture 2、Lecture 3 已上传，后续会继续补充。' : '暂时还是一页空白，等第一条值得留下的笔记。'}</p>
     </div>
     <span class="course-status"><i></i> 整理中</span>
   </section>
@@ -83,6 +83,14 @@ const { course } = Astro.props;
         <div class="resource-file-copy">
           <span>偏微分方程 · Lecture 2</span>
           <p>Transportation Eq and Harmonic Eq</p>
+        </div>
+        <small>打开 PDF ↗</small>
+      </a>
+      <h2 class="course-material-title">Lecture 3 · 2026-10-13</h2>
+      <a class="resource-file" href="/notes/courses/partial-differential-equations/lec3-20261013.pdf" target="_blank" rel="noreferrer">
+        <div class="resource-file-copy">
+          <span>偏微分方程 · Lecture 3</span>
+          <p>Green 公式与调和函数；Laplace / Poisson 方程（至 2.2 节末）</p>
         </div>
         <small>打开 PDF ↗</small>
       </a>
